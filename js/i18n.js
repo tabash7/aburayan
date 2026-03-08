@@ -391,7 +391,7 @@
             't4-text': '"وفّر نظام الصيانة التنبؤية الذي طوّرته الرتاج أكثر من 2 مليون دولار في العام الأول وحده من خلال القضاء على التوقفات غير المخططة."',
 
             /* CTA */
-            'cta-title': 'هل أنت مستعد للتحول؟<br/><span class="gradient-text">لأعمالك؟</span>',
+            'cta-title': 'هل أنت مستعد للتحول؟<br/><span class="gradient-text">لأعمالك</span>',
             'cta-sub': 'انضم إلى أكثر من 500 شركة حقّقت نمواً متسارعاً مع حلول الرتاج المؤسسية. دعنا نبني مستقبلك معاً.',
             'cta-btn1': 'ابدأ رحلتك',
             'cta-btn2': 'عرض جميع الخدمات',
@@ -485,6 +485,12 @@
             if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
         });
 
+        /* Select options */
+        document.querySelectorAll('option[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.textContent = t[key];
+        });
+
         /* RTL / LTR */
         var html = document.documentElement;
         html.setAttribute('lang', lang);
@@ -505,18 +511,16 @@
 
     /* ─── Init ─── */
     document.addEventListener('DOMContentLoaded', function () {
-        var saved = 'en';
-        try { saved = localStorage.getItem('alretaj-lang') || 'en'; } catch (_) { }
+        var saved = 'ar';
+        try { saved = localStorage.getItem('alretaj-lang') || 'ar'; } catch (_) { }
 
         applyLang(saved);
-
-        var btn = document.getElementById('lang-toggle');
-        if (btn) {
-            btn.addEventListener('click', function () {
-                var next = (window._currentLang === 'en') ? 'ar' : 'en';
-                applyLang(next);
-            });
-        }
     });
+
+    /* Global function for onclick */
+    window.toggleLang = function() {
+        var next = (window._currentLang === 'en') ? 'ar' : 'en';
+        applyLang(next);
+    };
 
 })();

@@ -59,7 +59,7 @@
             </nav>
 
             <div class="nav-actions">
-                <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">عربي</button>
+                <button class="lang-toggle" id="lang-toggle" aria-label="Switch language" onclick="toggleLang()">English</button>
                 <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav-cta">Get Started</a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span><span></span><span></span>
@@ -102,8 +102,8 @@
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-                <a href="#contact" class="btn btn-outline btn-lg" data-i18n="hero-btn2">
-                    Book a Consultation
+                <a href="#contact" class="btn btn-outline btn-lg">
+                    <span data-i18n="hero-btn2">Book a Consultation</span>
                 </a>
             </div>
             <div class="hero-clients" data-aos="fade-up" data-aos-delay="400">
@@ -597,7 +597,7 @@
             <div class="section-header" data-aos="fade-up">
                 <span class="section-tag">How We Work</span>
                 <h2 class="section-title">Our Proven <span class="gradient-text">4-Step Process</span></h2>
-                <p class="section-subtitle">A structured methodology that minimizes risk and maximizes value at every
+                <p class="section-subtitle" data-i18n="proc-sub">A structured methodology that minimizes risk and maximizes value at every
                     phase.</p>
             </div>
 
@@ -605,8 +605,8 @@
                 <div class="process-step" data-aos="fade-up" data-aos-delay="0">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h3>Discover & Assess</h3>
-                        <p>Deep-dive analysis of your current processes, technology landscape, and strategic goals to
+                        <h3 data-i18n="step1-title">Discover & Assess</h3>
+                        <p data-i18n="step1-desc">Deep-dive analysis of your current processes, technology landscape, and strategic goals to
                             identify high-impact opportunities.</p>
                     </div>
                 </div>
@@ -614,8 +614,8 @@
                 <div class="process-step" data-aos="fade-up" data-aos-delay="100">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>Design & Plan</h3>
-                        <p>Architect a tailored solution roadmap with clear milestones, risk mitigation strategies, and
+                        <h3 data-i18n="step2-title">Design & Plan</h3>
+                        <p data-i18n="step2-desc">Architect a tailored solution roadmap with clear milestones, risk mitigation strategies, and
                             measurable success metrics.</p>
                     </div>
                 </div>
@@ -623,8 +623,8 @@
                 <div class="process-step" data-aos="fade-up" data-aos-delay="200">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>Build & Implement</h3>
-                        <p>Agile development and deployment with continuous integration, rigorous testing, and
+                        <h3 data-i18n="step3-title">Build & Implement</h3>
+                        <p data-i18n="step3-desc">Agile development and deployment with continuous integration, rigorous testing, and
                             transparent progress reporting.</p>
                     </div>
                 </div>
@@ -632,8 +632,8 @@
                 <div class="process-step" data-aos="fade-up" data-aos-delay="300">
                     <div class="step-number">04</div>
                     <div class="step-content">
-                        <h3>Optimize & Scale</h3>
-                        <p>Ongoing monitoring, performance optimization, and scaling support to ensure your solution
+                        <h3 data-i18n="step4-title">Optimize & Scale</h3>
+                        <p data-i18n="step4-desc">Ongoing monitoring, performance optimization, and scaling support to ensure your solution
                             grows with your business.</p>
                     </div>
                 </div>
@@ -645,9 +645,9 @@
     <section id="testimonials" class="section section-gradient-dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <span class="section-tag">Client Stories</span>
-                <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
-                <p class="section-subtitle">Real results from real companies that trust Alretaj.</p>
+                <span class="section-tag" data-i18n="test-tag">Client Stories</span>
+                <h2 class="section-title" data-i18n-html="test-title">What Our <span class="gradient-text">Clients Say</span></h2>
+                <p class="section-subtitle" data-i18n="test-sub">Real results from real companies that trust Alretaj.</p>
             </div>
 
             <div class="testimonials-carousel" data-aos="fade-up" data-aos-delay="100">
@@ -658,12 +658,12 @@
                             <div class="testimonial-avatar"
                                 style="background: linear-gradient(135deg, #4f46e5, #06b6d4);">JM</div>
                             <div>
-                                <div class="testimonial-name">James Mitchell</div>
-                                <div class="testimonial-role">CTO, Apex Financial Group</div>
+                                <div class="testimonial-name" data-i18n="t1-name">James Mitchell</div>
+                                <div class="testimonial-role" data-i18n="t1-role">CTO, Apex Financial Group</div>
                             </div>
                             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
                         </div>
-                        <p class="testimonial-text">"Alretaj's cloud migration strategy reduced our operational costs by
+                        <p class="testimonial-text" data-i18n="t1-text">"Alretaj's cloud migration strategy reduced our operational costs by
                             43% and improved system reliability to 99.97% uptime. Their team's expertise in fintech gave
                             us unparalleled confidence throughout the project."</p>
                     </div>
@@ -673,12 +673,12 @@
                             <div class="testimonial-avatar"
                                 style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">SR</div>
                             <div>
-                                <div class="testimonial-name">Sarah Reynolds</div>
-                                <div class="testimonial-role">VP Operations, HealthFirst Network</div>
+                                <div class="testimonial-name" data-i18n="t2-name">Sarah Reynolds</div>
+                                <div class="testimonial-role" data-i18n="t2-role">VP Operations, HealthFirst Network</div>
                             </div>
                             <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
                         </div>
-                        <p class="testimonial-text">"The AI diagnostic assistance tool Alretaj built has been
+                        <p class="testimonial-text" data-i18n="t2-text">"The AI diagnostic assistance tool Alretaj built has been
                             transformative for our clinics. We process 60% more patients with better accuracy. Their
                             HIPAA compliance expertise made them the natural choice."</p>
                     </div>
@@ -739,26 +739,26 @@
         <div class="container">
             <div class="cta-box" data-aos="zoom-in">
                 <div class="cta-glow"></div>
-                <h2 class="cta-title">Ready to Transform<br /><span class="gradient-text">Your Business?</span></h2>
-                <p class="cta-subtitle">Join 500+ companies that have accelerated growth with Alretaj's enterprise
+                <h2 class="cta-title" data-i18n-html="cta-title">Ready to Transform<br /><span class="gradient-text">Your Business?</span></h2>
+                <p class="cta-subtitle" data-i18n="cta-sub">Join 500+ companies that have accelerated growth with Alretaj's enterprise
                     solutions. Let's build your future together.</p>
                 <div class="cta-actions">
-                    <a href="#contact" class="btn btn-primary btn-lg">Start Your Journey</a>
-                    <a href="#services" class="btn btn-glass btn-lg">View All Services</a>
+                    <a href="#contact" class="btn btn-primary btn-lg"><span data-i18n="cta-btn1">Start Your Journey</span></a>
+                    <a href="#services" class="btn btn-glass btn-lg"><span data-i18n="cta-btn2">View All Services</span></a>
                 </div>
                 <div class="cta-trust">
                     <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M20 6L9 17l-5-5" />
-                        </svg> Free initial consultation</div>
+                        </svg> <span data-i18n="cta-trust1">Free initial consultation</span></div>
                     <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M20 6L9 17l-5-5" />
-                        </svg> No long-term commitment required</div>
+                        </svg> <span data-i18n="cta-trust2">No long-term commitment required</span></div>
                     <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M20 6L9 17l-5-5" />
-                        </svg> Response within 24 hours</div>
+                        </svg> <span data-i18n="cta-trust3">Response within 24 hours</span></div>
                 </div>
             </div>
         </div>
@@ -768,9 +768,9 @@
     <section id="contact" class="section section-dark">
         <div class="container contact-grid">
             <div class="contact-info" data-aos="fade-right">
-                <span class="section-tag">Get In Touch</span>
-                <h2 class="section-title">Let's Start a <span class="gradient-text">Conversation</span></h2>
-                <p class="contact-desc">Whether you're ready to build or just exploring options, our experts are
+                <span class="section-tag" data-i18n="contact-tag">Get In Touch</span>
+                <h2 class="section-title" data-i18n-html="contact-title">Let's Start a <span class="gradient-text">Conversation</span></h2>
+                <p class="contact-desc" data-i18n="contact-desc">Whether you're ready to build or just exploring options, our experts are
                     standing by to help you discover the perfect solution for your business.</p>
 
                 <div class="contact-details">
@@ -783,7 +783,7 @@
                             </svg>
                         </div>
                         <div>
-                            <strong>Phone</strong>
+                            <strong data-i18n="phone-label">Phone</strong>
                             <span>+1 (888) 639-7658</span>
                         </div>
                     </div>
@@ -796,7 +796,7 @@
                             </svg>
                         </div>
                         <div>
-                            <strong>Email</strong>
+                            <strong data-i18n="email-label">Email</strong>
                             <span>hello@alretaj.com</span>
                         </div>
                     </div>
@@ -809,8 +809,8 @@
                             </svg>
                         </div>
                         <div>
-                            <strong>Head Office</strong>
-                            <span>120 Innovation Drive, San Francisco, CA 94105</span>
+                            <strong data-i18n="addr-label">Head Office</strong>
+                            <span data-i18n="addr-val">120 Innovation Drive, San Francisco, CA 94105</span>
                         </div>
                     </div>
                 </div>
@@ -820,10 +820,10 @@
                 <!-- Success / Error messages (outside form so they stay visible) -->
                 <div class="form-success" id="form-success" aria-live="polite">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                         <polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
-                    Thank you! We'll be in touch within 24 hours.
+                    <span data-i18n="form-success">Thank you! We'll be in touch within 24 hours.</span>
                 </div>
                 <div class="form-error" id="form-error" aria-live="polite"></div>
 
@@ -835,42 +835,42 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" name="firstName" placeholder="John" required />
+                            <label for="first-name" data-i18n="form-fname-l">First Name</label>
+                            <input type="text" id="first-name" name="firstName" data-i18n-ph="form-fname-ph" placeholder="John" required />
                         </div>
                         <div class="form-group">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" name="lastName" placeholder="Doe" required />
+                            <label for="last-name" data-i18n="form-lname-l">Last Name</label>
+                            <input type="text" id="last-name" name="lastName" data-i18n-ph="form-lname-ph" placeholder="Doe" required />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Work Email</label>
-                        <input type="email" id="email" name="email" placeholder="john@company.com" required />
+                        <label for="email" data-i18n="form-email-l">Work Email</label>
+                        <input type="email" id="email" name="email" data-i18n-ph="form-email-ph" placeholder="john@company.com" required />
                     </div>
                     <div class="form-group">
-                        <label for="company">Company Name</label>
-                        <input type="text" id="company" name="company" placeholder="Acme Corporation" required />
+                        <label for="company" data-i18n="form-company-l">Company Name</label>
+                        <input type="text" id="company" name="company" data-i18n-ph="form-company-ph" placeholder="Acme Corporation" required />
                     </div>
                     <div class="form-group">
-                        <label for="service">Service Interest</label>
+                        <label for="service" data-i18n="form-svc-l">Service Interest</label>
                         <select id="service" name="service">
-                            <option value="">Select a service...</option>
-                            <option value="digital-transformation">Digital Transformation</option>
-                            <option value="cloud">Cloud Solutions</option>
-                            <option value="cybersecurity">Cybersecurity</option>
-                            <option value="ai-automation">AI & Automation</option>
-                            <option value="analytics">Data Analytics</option>
-                            <option value="custom-software">Custom Software</option>
-                            <option value="other">Other</option>
+                            <option value="" data-i18n="form-svc-ph">Select a service...</option>
+                            <option value="digital-transformation" data-i18n="form-svc-1">Digital Transformation</option>
+                            <option value="cloud" data-i18n="form-svc-2">Cloud Solutions</option>
+                            <option value="cybersecurity" data-i18n="form-svc-3">Cybersecurity</option>
+                            <option value="ai-automation" data-i18n="form-svc-4">AI & Automation</option>
+                            <option value="analytics" data-i18n="form-svc-5">Data Analytics</option>
+                            <option value="custom-software" data-i18n="form-svc-6">Custom Software</option>
+                            <option value="other" data-i18n="form-svc-7">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message" data-i18n="form-msg-l">Message</label>
                         <textarea id="message" name="message" rows="4"
-                            placeholder="Tell us about your project and challenges..."></textarea>
+                            data-i18n-ph="form-msg-ph" placeholder="Tell us about your project and challenges..."></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg" id="submit-btn" style="width:100%;">
-                        <span class="btn-text">Send Message</span>
+                        <span class="btn-text" data-i18n="form-submit">Send Message</span>
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" />
@@ -901,7 +901,7 @@
                         </span>
                         <span class="logo-text">Al<span class="logo-accent">retaj</span></span>
                     </a>
-                    <p class="footer-tagline">Powering enterprise innovation with world-class technology solutions since
+                    <p class="footer-tagline" data-i18n="footer-tagline">Powering enterprise innovation with world-class technology solutions since
                         2015.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="LinkedIn">
@@ -928,51 +928,51 @@
 
                 <div class="footer-links-grid">
                     <div class="footer-col">
-                        <h4>Services</h4>
+                        <h4 data-i18n="footer-svc-head">Services</h4>
                         <ul>
-                            <li><a href="#services">Digital Transformation</a></li>
-                            <li><a href="#services">Cloud Solutions</a></li>
-                            <li><a href="#services">Cybersecurity</a></li>
-                            <li><a href="#services">AI & Automation</a></li>
-                            <li><a href="#services">Data Analytics</a></li>
-                            <li><a href="#services">Custom Software</a></li>
+                            <li><a href="#services" data-i18n="footer-f-transform">Digital Transformation</a></li>
+                            <li><a href="#services" data-i18n="footer-f-cloud">Cloud Solutions</a></li>
+                            <li><a href="#services" data-i18n="footer-f-sec">Cybersecurity</a></li>
+                            <li><a href="#services" data-i18n="footer-f-ai">AI & Automation</a></li>
+                            <li><a href="#services" data-i18n="footer-f-data">Data Analytics</a></li>
+                            <li><a href="#services" data-i18n="footer-f-soft">Custom Software</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Industries</h4>
+                        <h4 data-i18n="footer-ind-head">Industries</h4>
                         <ul>
-                            <li><a href="#solutions">Finance</a></li>
-                            <li><a href="#solutions">Healthcare</a></li>
-                            <li><a href="#solutions">Retail</a></li>
-                            <li><a href="#solutions">Manufacturing</a></li>
-                            <li><a href="#solutions">Logistics</a></li>
+                            <li><a href="#solutions" data-i18n="footer-i-finance">Finance</a></li>
+                            <li><a href="#solutions" data-i18n="footer-i-health">Healthcare</a></li>
+                            <li><a href="#solutions" data-i18n="footer-i-retail">Retail</a></li>
+                            <li><a href="#solutions" data-i18n="footer-i-mfg">Manufacturing</a></li>
+                            <li><a href="#solutions" data-i18n="footer-i-log">Logistics</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Company</h4>
+                        <h4 data-i18n="footer-comp-head">Company</h4>
                         <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#testimonials">Case Studies</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#about" data-i18n="footer-c-about">About Us</a></li>
+                            <li><a href="#testimonials" data-i18n="footer-c-cases">Case Studies</a></li>
+                            <li><a href="#" data-i18n="footer-c-careers">Careers</a></li>
+                            <li><a href="#" data-i18n="footer-c-blog">Blog</a></li>
+                            <li><a href="#contact" data-i18n="footer-c-contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Legal</h4>
+                        <h4 data-i18n="footer-legal-head">Legal</h4>
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">GDPR</a></li>
+                            <li><a href="#" data-i18n="footer-l-privacy">Privacy Policy</a></li>
+                            <li><a href="#" data-i18n="footer-l-terms">Terms of Service</a></li>
+                            <li><a href="#" data-i18n="footer-l-cookie">Cookie Policy</a></li>
+                            <li><a href="#" data-i18n="footer-l-gdpr">GDPR</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>© 2024 Alretaj, Inc. All rights reserved.</p>
-                <p>Built with passion for enterprise innovation.</p>
+                <p data-i18n="footer-copy">© 2024 Alretaj, Inc. All rights reserved.</p>
+                <p data-i18n="footer-made">Built with passion for enterprise innovation.</p>
             </div>
         </div>
     </footer>
@@ -985,6 +985,7 @@
     </button>
 
     <!-- Scripts -->
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 
