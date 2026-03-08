@@ -300,61 +300,69 @@
 
   /* ─── 8. Contact Form — Formspree ─── */
   (function initForm() {
-    const form = document.getElementById('contact-form');
-    const success = document.getElementById('form-success');
-    const errorEl = document.getElementById('form-error');
-    const btn = document.getElementById('submit-btn');
-    const btnText = btn ? btn.querySelector('.btn-text') : null;
+    var form = document.getElementById('contact-form');
+    var success = document.getElementById('form-success');
+    var errorEl = document.getElementById('form-error');
+    var btn = document.getElementById('submit-btn');
+    var btnText = btn ? btn.querySelector('.btn-text') : null;
 
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // ── Client-side validation ──
-      var required = form.querySelectorAll('[required]');
+      /* ── Validation ── */
+      var fields = form.querySelectorAll('[required]');
       var valid = true;
-
-      required.forEach(function (field) {
-        field.style.borderColor = '';
-        field.style.boxShadow = '';
-        if (!field.value.trim()) {
-          field.style.borderColor = 'rgba(239,68,68,0.6)';
-          field.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
+      fields.forEach(function (f) {
+        f.style.borderColor = '';
+        f.style.boxShadow = '';
+        if (!f.value.trim()) {
+          f.style.borderColor = 'rgba(239,68,68,0.6)';
+          f.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
           valid = false;
         }
       });
-
       if (!valid) return;
 
-      // ── Loading state ──
+      /* ── Loading ── */
       btn.disabled = true;
       btnText.textContent = 'Sending…';
       btn.style.opacity = '0.75';
+      if (errorEl) errorEl.classList.remove('visible');
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' },
-      })
-        .then(function (response) {
-          if (response.ok) {
-            // ── Success ──
-            form.style.display = 'none';
-            success.classList.add('visible');
-          } else {
-            return response.json().then(function (json) {
-              var msg = (json.errors || []).map(function (err) { return err.message; }).join(', ')
-                || 'Something went wrong. Please try again.';
-              showError(msg);
-              resetBtn();
-            });
-          }
-        })
-        .catch(function () {
-          showError('Network error — please check your connection and try again.');
-          resetBtn();
-        });
+      /* ── Send via XHR (avoids fetch CORS issues on file://) ── */
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', form.action);
+      xhr.setRequestHeader('Accept', 'application/json');
+
+      xhr.onload = function () {
+        resetBtn();
+        if (xhr.status >= 200 && xhr.status < 300) {
+          /* Success */
+          form.style.display = 'none';
+          if (success) success.classList.add('visible');
+        } else {
+          /* Formspree returned an error */
+          var msg = 'Something went wrong (status ' + xhr.status + '). Please try again.';
+          try {
+            var json = JSON.parse(xhr.responseText);
+            if (json && json.errors && json.errors.length) {
+              msg = json.errors.map(function (err) { return err.message; }).join('. ');
+            }
+          } catch (_) { }
+          console.error('[Formspree]', xhr.status, xhr.responseText);
+          showError(msg);
+        }
+      };
+
+      xhr.onerror = function () {
+        resetBtn();
+        console.error('[Formspree] Network error');
+        showError('Network error — please check your connection and try again.');
+      };
+
+      xhr.send(new FormData(form));
 
       function resetBtn() {
         btn.disabled = false;
@@ -366,7 +374,7 @@
         if (errorEl) {
           errorEl.textContent = msg;
           errorEl.classList.add('visible');
-          setTimeout(function () { errorEl.classList.remove('visible'); }, 6000);
+          setTimeout(function () { errorEl.classList.remove('visible'); }, 8000);
         }
       }
     });
