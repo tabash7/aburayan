@@ -293,6 +293,23 @@ select {
   gap: 0.75rem;
 }
 
+.lang-toggle {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  background: transparent;
+  border: 1px solid var(--clr-border);
+  transition: var(--transition-fast);
+}
+
+.lang-toggle:hover {
+  color: var(--clr-text);
+  border-color: var(--clr-border-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
