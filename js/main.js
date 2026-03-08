@@ -298,23 +298,26 @@
     goTo(0);
   })();
 
-  /* ─── 8. Contact Form ─── */
+  /* ─── 8. Contact Form — Formspree ─── */
   (function initForm() {
     const form = document.getElementById('contact-form');
     const success = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
     const btn = document.getElementById('submit-btn');
+    const btnText = btn ? btn.querySelector('.btn-text') : null;
 
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Simple validation
-      const required = form.querySelectorAll('[required]');
-      let valid = true;
+      // ── Client-side validation ──
+      var required = form.querySelectorAll('[required]');
+      var valid = true;
 
-      required.forEach(field => {
+      required.forEach(function (field) {
         field.style.borderColor = '';
+        field.style.boxShadow = '';
         if (!field.value.trim()) {
           field.style.borderColor = 'rgba(239,68,68,0.6)';
           field.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.1)';
@@ -324,14 +327,48 @@
 
       if (!valid) return;
 
-      // Simulate submission
+      // ── Loading state ──
       btn.disabled = true;
-      btn.querySelector('.btn-text').textContent = 'Sending…';
+      btnText.textContent = 'Sending…';
+      btn.style.opacity = '0.75';
 
-      setTimeout(() => {
-        form.style.display = 'none';
-        success.classList.add('visible');
-      }, 1200);
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            // ── Success ──
+            form.style.display = 'none';
+            success.classList.add('visible');
+          } else {
+            return response.json().then(function (json) {
+              var msg = (json.errors || []).map(function (err) { return err.message; }).join(', ')
+                || 'Something went wrong. Please try again.';
+              showError(msg);
+              resetBtn();
+            });
+          }
+        })
+        .catch(function () {
+          showError('Network error — please check your connection and try again.');
+          resetBtn();
+        });
+
+      function resetBtn() {
+        btn.disabled = false;
+        btnText.textContent = 'Send Message';
+        btn.style.opacity = '';
+      }
+
+      function showError(msg) {
+        if (errorEl) {
+          errorEl.textContent = msg;
+          errorEl.classList.add('visible');
+          setTimeout(function () { errorEl.classList.remove('visible'); }, 6000);
+        }
+      }
     });
   })();
 
