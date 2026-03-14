@@ -66,6 +66,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Arabic Font - Cairo */
+body.lang-ar {
+  font-family: 'Cairo', var(--font-sans);
+}
+
+body.lang-ar h1,
+body.lang-ar h2,
+body.lang-ar h3,
+body.lang-ar h4,
+body.lang-ar h5,
+body.lang-ar h6,
+body.lang-ar .hero-title,
+body.lang-ar .section-title,
+body.lang-ar .service-title,
+body.lang-ar .nav-link,
+body.lang-ar .btn {
+  font-family: 'Cairo', var(--font-display);
+}
+
 img {
   max-width: 100%;
   display: block;
